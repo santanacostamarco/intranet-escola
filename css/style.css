@@ -1,0 +1,47 @@
+body {
+    padding: 0px;
+}
+a{text-decoration: none!important;}
+.welcome-login{
+	width: 400px;
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+	margin: 0px 100px 0px 0px;
+
+}
+input.form-control {
+	margin-bottom: 10px;
+}
+input.btn {
+	margin: 5px;
+}
+.main.login-front {
+	text-align: right;
+}
+.form-group-login {
+	width: 400px;
+	display: inline-block;
+  text-align: left;
+}
+.button {
+  text-align: center;
+  padding: 7px 10px;
+  display: inline-flex;
+
+}
+.button:hover {
+  background-color: #16a085;
+}
+a .button {
+  color: #fff;
+}
+.nav-bar{
+  background-color: #1abc9c;
+  margin:0 -2rem;
+  text-align: center;
+}
+.nav-bar li{
+  display: inline-block;
+  margin: 0 5px;
+}
