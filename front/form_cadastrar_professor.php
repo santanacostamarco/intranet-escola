@@ -5,26 +5,30 @@
       <h4> Dados Pessoais </h4>
     </div>
 
+    <div class="system-info warning">
+      <p> Os capos marcados com <abbr class="required"> * </abbr> são obrigatórios.</p>
+    </div>
+
     <table>
       <input type="hidden" name="user-type" value="professor"/>
       <tr>
-        <td> <label for="first-name" class="form-lable"> Nome <abbr class="required"> * </abbr></label> </td>
-        <td> <label for="last-name" class="form-lable"> Sobrenome <abbr class="required"> * </abbr></label> </td>
+        <td> <label for="first-name" class="form-label"> Nome <abbr class="required"> * </abbr></label> </td>
+        <td> <label for="last-name" class="form-label"> Sobrenome <abbr class="required"> * </abbr></label> </td>
       </tr>
       <tr>
         <td><input type="text" name="user-first-name" class="form-input" required /></td>
         <td><input type="text" name="user-last-name" class="form-input" required /></td>
       </tr>
       <tr>
-        <td> <label for="birthdate" class="form-lable"> Data de Nascimento <abbr class="required"> * </abbr></label> </td>
-        <td> <label for="sexo" class="form-lable"> Sexo <abbr class="required"> * </abbr></label> </td>
+        <td> <label for="birthdate" class="form-label"> Data de Nascimento <abbr class="required"> * </abbr></label> </td>
+        <td> <label for="sexo" class="form-label"> Sexo <abbr class="required"> * </abbr></label> </td>
       </tr>
       <tr>
         <td><input type="date" name="user-birthdate" class="form-input" required /></td>
         <td>
-          <input type="radio" name="user-sexo" value="feminino" class="form-radio-input"> Feminino </input>
-          <input type="radio" name="user-sexo" value="masculino" class="form-radio-input"> Masculino </input>
-          <input type="radio" name="user-sexo" value="outro" class="form-radio-input"> Outro </input>
+          <input type="radio" name="user-sexo" id="radio1" value="feminino" class="form-radio-input"> <label for="radio1"> Feminino </label>
+          <input type="radio" name="user-sexo" id="radio2" value="masculino" class="form-radio-input"> <label for="radio2"> Masculino </label>
+          <input type="radio" name="user-sexo" id="radio3" value="outro" class="form-radio-input"> <label for="radio3"> Outro </label>
         </td>
       </tr>
     </table>
@@ -35,8 +39,8 @@
 
     <table>
       <tr>
-        <td> <label for="username" class="form-lable"> Nome de usuário <abbr class="required"> * </abbr></label> </td>
-        <td> <label for="email" class="form-lable"> E-mail <abbr class="required"> * </abbr></label> </td>
+        <td> <label for="username" class="form-label"> Nome de usuário <abbr class="required"> * </abbr></label> </td>
+        <td> <label for="email" class="form-label"> E-mail <abbr class="required"> * </abbr></label> </td>
       </tr>
       <tr>
         <td><input type="text" name="user-username" class="form-input" required /></td>
@@ -48,10 +52,65 @@
     </div>
 
     <div class="form-title">
-      <h4> Dados de Contrato </h4>
+      <h4> Dados de Contato </h4>
     </div>
 
     <table>
+
+      <tr>
+        <td> <label for="cep" class="form-label"> CEP <abbr class="required"> * </abbr></label> </td>
+        <td> <label for="endereco" class="form-label"> Endereço <abbr class="required"> * </abbr></label> </td>
+      </tr>
+      <tr>
+        <td><input type="number" name="user-cep" class="form-input" required /></td>
+        <td><input type="text" name="user-endereco" class="form-input" required /></td>
+      </tr>
+      <tr>
+        <td> <label for="cidade" class="form-label"> Cidade <abbr class="required"> * </abbr></label> </td>
+        <td> <label for="estado" class="form-label"> Estado <abbr class="required"> * </abbr></label> </td>
+      </tr>
+      <tr>
+        <td><input type="text" name="user-cidade" class="form-input" required /></td>
+        <td style="position: absolute;"><select name="user-estado" class="form-select">
+        	<option value="AC">Acre</option>
+        	<option value="AL">Alagoas</option>
+        	<option value="AP">Amapá</option>
+        	<option value="AM">Amazonas</option>
+        	<option value="BA">Bahia</option>
+        	<option value="CE">Ceará</option>
+        	<option value="DF">Distrito Federal</option>
+        	<option value="ES">Espírito Santo</option>
+        	<option value="GO">Goiás</option>
+        	<option value="MA">Maranhão</option>
+        	<option value="MT">Mato Grosso</option>
+        	<option value="MS">Mato Grosso do Sul</option>
+        	<option value="MG">Minas Gerais</option>
+        	<option value="PA">Pará</option>
+        	<option value="PB">Paraíba</option>
+        	<option value="PR">Paraná</option>
+        	<option value="PE">Pernambuco</option>
+        	<option value="PI">Piauí</option>
+        	<option value="RJ">Rio de Janeiro</option>
+        	<option value="RN">Rio Grande do Norte</option>
+        	<option value="RS">Rio Grande do Sul</option>
+        	<option value="RO">Rondônia</option>
+        	<option value="RR">Roraima</option>
+        	<option value="SC">Santa Catarina</option>
+        	<option value="SP">São Paulo</option>
+        	<option value="SE">Sergipe</option>
+        	<option value="TO">Tocantins</option>
+        </select></td>
+
+      </tr>
+      <tr>
+        <td> <label for="numero-endereco" class="form-label"> Numero <abbr class="required"> * </abbr></label> </td>
+        <td> <label for="complemento" class="form-label"> Complemento </label> </td>
+      </tr>
+      <tr>
+        <td><input type="text" name="user-numero-endereco" class="form-input" required /></td>
+        <td><input type="text" name="complemento" class="form-input" /></td>
+      </tr>
+
 
     </table>
 

@@ -45,3 +45,79 @@ a .button {
   display: inline-block;
   margin: 0 5px;
 }
+
+input.form-input {
+    min-width: 300px;
+    max-height: 27px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border:0;
+    border-bottom:1px solid #1abc9c;
+    background: none;
+
+}
+
+.form-title {
+    margin-bottom: 20px;
+}
+label.form-label {
+    margin: 0;
+    color: #2f464e;
+}
+
+input.form-submit {
+    border: 0;
+    color: #fff;
+    background: #1abc9c;
+    padding: 10px;
+}
+input.form-radio-input {
+    margin-left: 10px;
+}
+select.form-select{
+  width:300px;
+  height: 27px;
+  border:0;
+  border-bottom:1px solid #1abc9c;
+  background: none;
+}
+abbr {
+    color: #d82a2a;
+}
+
+input.form-submit:hover {
+    background: #16a085;
+}
+
+.system-info {
+  vertical-align: middle;
+  border:2px dotted #2f464e;
+  margin:20px 0;
+}
+.system-info p {
+    color: #2f464e;
+    margin: 0;
+    margin: 10px 20px 10px 50px;
+    display: inline-flex;
+    align-items: center;
+}
+.warning p::before{
+  content:"";
+  display: inline-block;
+  width:30px;
+  height: 30px;
+  background: url('../img/warning.png');
+  background-size: 30px;
+  position: absolute;
+  margin-left: -40px;
+}
+.error p::before{
+  content:"";
+  display: inline-block;
+  width:30px;
+  height: 30px;
+  background: url('../img/error.png');
+  background-size: 30px;
+  position: absolute;
+  margin-left: -40px;
+}
