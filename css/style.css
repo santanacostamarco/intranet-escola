@@ -24,15 +24,19 @@ input.btn {
 	display: inline-block;
   text-align: left;
 }
-.button {
+li .button {
   text-align: center;
   padding: 7px 10px;
   display: inline-flex;
 
 }
-.button:hover {
+li .button:hover {
   background-color: #16a085;
 }
+li .button.current {
+  background-color: #16a085;
+}
+
 a .button {
   color: #fff;
 }
@@ -65,7 +69,7 @@ label.form-label {
     color: #2f464e;
 }
 
-input.form-submit {
+button.form-submit {
     border: 0;
     color: #fff;
     background: #1abc9c;
@@ -85,7 +89,7 @@ abbr {
     color: #d82a2a;
 }
 
-input.form-submit:hover {
+button.form-submit:hover {
     background: #16a085;
 }
 

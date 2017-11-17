@@ -28,19 +28,20 @@
 		$user_type = getUserType($id)[0];
 		$result = [];
 		$result[] = '<ul class="botoes">';
-		$result[] = '<li><a   href="home.php"><div class="button">Início</div></a></li>';
-		$result[] = '<li><a   href="outro.php"><div class="button">outro</div></a></li>';
-		$result[] = '<li><a   href="outro.php"><div class="button">outro</div></a></li>';
+		$result[] = '<li><a   href="home.php"><div class="button inicio">Início</div></a></li>';
+		$result[] = '<li><a   href="outro.php"><div class="button outro">outro</div></a></li>';
+		$result[] = '<li><a   href="outro.php"><div class="button outro">outro</div></a></li>';
 		switch ($user_type){
 			case "admin":
-				$result[] = '<li><a   href="form_cadastrar_professor.php"><div class="button">Cadastrar Professor</div></a></li>';
-				$result[] = '<li><a   href="form_cadastrar_aluno.php"><div class="button">Cadastrar Aluno</div></a></li>';
+				$result[] = '<li><a   href="form_cadastrar_professor.php"><div class="button cadastrar-professor">Cadastrar Professor</div></a></li>';
+				$result[] = '<li><a   href="form_cadastrar_aluno.php"><div class="button cadastrar-aluno">Cadastrar Aluno</div></a></li>';
 				break;
 			case "professor":
-				$result[] = '<li><a   href="form_cadastrar_aluno.php"><div class="button">Cadastrar Aluno</div></a></li>';
+				$result[] = '<li><a   href="form_cadastrar_aluno.php"><div class="button cadastrar-aluno">Cadastrar Aluno</div></a></li>';
+				$result[] = '<li><a   href="calendario.php"><div class="button calendario">Meu calendario</div></a></li>';
 				break;
 			case "aluno":
-				$result[] = '<li><a   href="calendario.php"><div class="button">Meu calendario</div></a></li>';
+				$result[] = '<li><a   href="calendario.php"><div class="button calendario">Meu calendario</div></a></li>';
 				break;
 		}
 		$result[] = '</ul>';

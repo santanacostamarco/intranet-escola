@@ -1,4 +1,4 @@
-<div class="form cadastrar-professor">
+<div class="form cadastrar-aluno">
   <form action="cadastrar.php" method="post">
 
     <div class="form-title">
@@ -10,7 +10,7 @@
     </div>
 
     <table>
-      <input type="hidden" name="user-type" value="professor"/>
+      <input type="hidden" name="user-type" value="aluno"/>
       <tr>
         <td> <label for="first-name" class="form-label"> Nome <abbr class="required"> * </abbr></label> </td>
         <td> <label for="last-name" class="form-label"> Sobrenome <abbr class="required"> * </abbr></label> </td>
