@@ -26,9 +26,9 @@
       <tr>
         <td><input type="date" name="user-birthdate" class="form-input" required /></td>
         <td>
-          <input type="radio" name="user-sexo" id="radio1" value="feminino" class="form-radio-input"> <label for="radio1"> Feminino </label>
-          <input type="radio" name="user-sexo" id="radio2" value="masculino" class="form-radio-input"> <label for="radio2"> Masculino </label>
-          <input type="radio" name="user-sexo" id="radio3" value="outro" class="form-radio-input"> <label for="radio3"> Outro </label>
+          <input type="radio" name="user-sexo" id="radio1" value="f" class="form-radio-input"> <label for="radio1"> Feminino </label>
+          <input type="radio" name="user-sexo" id="radio2" value="m" class="form-radio-input"> <label for="radio2"> Masculino </label>
+          <input type="radio" name="user-sexo" id="radio3" value="o" class="form-radio-input"> <label for="radio3"> Outro </label>
         </td>
       </tr>
     </table>
@@ -51,6 +51,7 @@
       para o e-mail cadastrado, solicite que o usuário troque no primeiro acesso.</p>
     </div>
 
+<!--
     <div class="form-title">
       <h4> Dados de Contato </h4>
     </div>
@@ -71,35 +72,37 @@
       </tr>
       <tr>
         <td><input type="text" name="user-cidade" class="form-input" required /></td>
-        <td style="position: absolute;"><select name="user-estado" class="form-select">
-        	<option value="AC">Acre</option>
-        	<option value="AL">Alagoas</option>
-        	<option value="AP">Amapá</option>
-        	<option value="AM">Amazonas</option>
-        	<option value="BA">Bahia</option>
-        	<option value="CE">Ceará</option>
-        	<option value="DF">Distrito Federal</option>
-        	<option value="ES">Espírito Santo</option>
-        	<option value="GO">Goiás</option>
-        	<option value="MA">Maranhão</option>
-        	<option value="MT">Mato Grosso</option>
-        	<option value="MS">Mato Grosso do Sul</option>
-        	<option value="MG">Minas Gerais</option>
-        	<option value="PA">Pará</option>
-        	<option value="PB">Paraíba</option>
-        	<option value="PR">Paraná</option>
-        	<option value="PE">Pernambuco</option>
-        	<option value="PI">Piauí</option>
-        	<option value="RJ">Rio de Janeiro</option>
-        	<option value="RN">Rio Grande do Norte</option>
-        	<option value="RS">Rio Grande do Sul</option>
-        	<option value="RO">Rondônia</option>
-        	<option value="RR">Roraima</option>
-        	<option value="SC">Santa Catarina</option>
-        	<option value="SP">São Paulo</option>
-        	<option value="SE">Sergipe</option>
-        	<option value="TO">Tocantins</option>
-        </select></td>
+        <td style="position: absolute;">
+          <select name="user-estado" class="form-select">
+          	<option value="AC">Acre</option>
+          	<option value="AL">Alagoas</option>
+          	<option value="AP">Amapá</option>
+          	<option value="AM">Amazonas</option>
+          	<option value="BA">Bahia</option>
+          	<option value="CE">Ceará</option>
+          	<option value="DF">Distrito Federal</option>
+          	<option value="ES">Espírito Santo</option>
+          	<option value="GO">Goiás</option>
+          	<option value="MA">Maranhão</option>
+          	<option value="MT">Mato Grosso</option>
+          	<option value="MS">Mato Grosso do Sul</option>
+          	<option value="MG">Minas Gerais</option>
+          	<option value="PA">Pará</option>
+          	<option value="PB">Paraíba</option>
+          	<option value="PR">Paraná</option>
+          	<option value="PE">Pernambuco</option>
+          	<option value="PI">Piauí</option>
+          	<option value="RJ">Rio de Janeiro</option>
+          	<option value="RN">Rio Grande do Norte</option>
+          	<option value="RS">Rio Grande do Sul</option>
+          	<option value="RO">Rondônia</option>
+          	<option value="RR">Roraima</option>
+          	<option value="SC">Santa Catarina</option>
+          	<option value="SP">São Paulo</option>
+          	<option value="SE">Sergipe</option>
+          	<option value="TO">Tocantins</option>
+          </select>
+        </td>
 
       </tr>
       <tr>
@@ -110,9 +113,16 @@
         <td><input type="text" name="user-numero-endereco" class="form-input" required /></td>
         <td><input type="text" name="complemento" class="form-input" /></td>
       </tr>
-
-
+      <tr>
+        <td> <label for="telefone1" class="form-label"> Telefone ou celular <abbr class="required"> * </abbr></label> </td>
+        <td> <label for="telefone2" class="form-label"> Outro telefone </label> </td>
+      </tr>
+      <tr>
+        <td><input type="text" name="telefone1" class="form-input" required /></td>
+        <td><input type="text" name="telefone2" class="form-input" /></td>
+      </tr>
     </table>
+-->
 
     <div class="form-submit-control">
       <button type="submit" class="form-submit">CADASTRAR</button>

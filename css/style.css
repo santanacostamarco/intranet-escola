@@ -125,3 +125,6 @@ button.form-submit:hover {
   position: absolute;
   margin-left: -40px;
 }
+input[type=number][name=user-cep]::-webkit-inner-spin-button {
+  -webkit-appearance: none!important;
+}

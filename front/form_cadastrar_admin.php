@@ -10,7 +10,7 @@
     </div>
 
     <table>
-      <input type="hidden" name="user-type" value="professor"/>
+      <input type="hidden" name="user-type" value="admin"/>
       <tr>
         <td> <label for="first-name" class="form-label"> Nome <abbr class="required"> * </abbr></label> </td>
         <td> <label for="last-name" class="form-label"> Sobrenome <abbr class="required"> * </abbr></label> </td>
@@ -50,6 +50,8 @@
     <div class="system-info warning"> <p> A senha será gerada automáticamente e enviada
       para o e-mail cadastrado, solicite que o usuário troque no primeiro acesso.</p>
     </div>
+
+
 
     <div class="form-submit-control">
       <button type="submit" class="form-submit">CADASTRAR</button>

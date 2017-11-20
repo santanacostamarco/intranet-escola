@@ -10,7 +10,7 @@
 
 		$connection = connection_checker();
 		if ($connection == false){
-
+			//tratar erro de conexão
 		}else{
 			$result = mysqli_query($connection, $query);
 			if (mysqli_num_rows($result) > 0){
