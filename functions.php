@@ -62,7 +62,7 @@
 		if (mysqli_num_rows(mysqli_query(connection_checker(), "SELECT user_id FROM users WHERE username = '{$user}' AND email = '{$email}'")) > 0){
 			return 3;
 		}
-		if (mysqli_num_rows(mysqli_query(connection_checker(), "SELECT user_id FROM users WHERE email = '{$user}'")) > 0){
+		if (mysqli_num_rows(mysqli_query(connection_checker(), "SELECT user_id FROM users WHERE email = '{$email}'")) > 0){
 			return 2;
 		}
 		if (mysqli_num_rows(mysqli_query(connection_checker(), "SELECT user_id FROM users WHERE username = '{$user}'")) > 0){

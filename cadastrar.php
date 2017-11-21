@@ -11,34 +11,35 @@
     $user_email = $_POST['user-email'];
     $user_password = stringAleatoria();
     $connection = connection_checker();
-    $query = "INSERT INTO users (
-      username,
-      user_tipo,
-      email,
-      user_password,
-      senha_prov,
-      user_first_name,
-      user_last_name,
-      sex,
-      user_birth_date,
-      user_date_creation
-      )
-      VALUES (
-        '{$user_username}',
-        '{$user_type}',
-        '{$user_email}',
-        '" . md5($user_password) . "',
-        1,
-        '{$user_first_name}',
-        '{$user_last_name}',
-        '{$user_sexo}',
-        '{$user_birthdate}',
-        CURRENT_DATE
-      )";
+
     switch (existeUsuario($user_username, $user_email)) {
       case 0:
+      $query = "INSERT INTO users (
+        username,
+        user_tipo,
+        email,
+        user_password,
+        senha_prov,
+        user_first_name,
+        user_last_name,
+        sex,
+        user_birth_date,
+        user_date_creation
+        )
+        VALUES (
+          '{$user_username}',
+          '{$user_type}',
+          '{$user_email}',
+          '" . md5($user_password) . "',
+          1,
+          '{$user_first_name}',
+          '{$user_last_name}',
+          '{$user_sexo}',
+          '{$user_birthdate}',
+          CURRENT_DATE
+        )";
         mysqli_query($connection, $query);
-        echo "<br> a SENHA do novo user é: " . $user_password;
+        echo "A senha do novo user é: " . $user_password;
         break;
       case 1:
         echo "Este usuário já existe.";

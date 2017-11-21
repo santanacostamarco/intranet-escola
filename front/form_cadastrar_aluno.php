@@ -1,4 +1,4 @@
-<div class="form cadastrar-aluno">
+<div class="form" id="cadastrar-aluno">
   <form action="cadastrar.php" method="post">
 
     <div class="form-title">
@@ -130,3 +130,4 @@
 
   </form>
 </div>
+<script src="js/ajax_cadastrar.js"> </script>
