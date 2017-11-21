@@ -10,12 +10,14 @@ a{text-decoration: none!important;}
 	margin: 0px 100px 0px 0px;
 
 }
+/*
 input.form-control {
 	margin-bottom: 10px;
 }
 input.btn {
 	margin: 5px;
 }
+*/
 .main.login-front {
 	text-align: right;
 }
@@ -23,6 +25,9 @@ input.btn {
 	width: 400px;
 	display: inline-block;
   text-align: left;
+}
+.form-group-login form{
+  display: grid;
 }
 li .button {
   text-align: center;
@@ -74,6 +79,8 @@ button.form-submit {
     color: #fff;
     background: #1abc9c;
     padding: 10px;
+    margin-right: 20px;
+    margin-bottom: 20px;
 }
 input.form-radio-input {
     margin-left: 10px;

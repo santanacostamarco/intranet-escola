@@ -33,10 +33,12 @@
 		switch ($user_type){
 			case "admin":
 				$result[] = '<li><a   href="form_cadastrar.php"><div class="button cadastrar">Cadastrar usuário</div></a></li>';
+				$result[] = '<li><a   href="list_users.php"><div class="button usuarios">Usuários</div></a></li>';
 				break;
 			case "professor":
 				$result[] = '<li><a   href="#cadastrarAluno"><div class="button cadastrar-aluno">Cadastrar Aluno</div></a></li>';
 				$result[] = '<li><a   href="#meuClaendário"><div class="button calendario">Meu calendario</div></a></li>';
+				$result[] = '<li><a   href="list_alunos.php"><div class="button meus-alunos">Meus Alunos</div></a></li>';
 				break;
 			case "aluno":
 				$result[] = '<li><a   href="#meuClaendário"><div class="button calendario">Meu calendario</div></a></li>';
@@ -44,6 +46,7 @@
 
 				break;
 		}
+		$result[] = '<li><a   href="ajustes.php"><div class="button ajustes">Ajustes</div></a></li>';
 		$result[] = '</ul>';
 		return $result;
 	}
