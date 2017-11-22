@@ -6,15 +6,17 @@
   } else {
     $query = "SELECT user_id, username, email, user_tipo, senha_prov FROM users WHERE 1";
     $result = mysqli_query($connection, $query);
-    echo "<table>";
-    while ($row = mysqli_fetch_array($result)) {
+    echo "<div class='table list-user' id='list-user'><table><thead><tr><th>ID</th><th>Nome de Usuário</th><th>E-mail</th><th>Tipo</th><th>Senha provisória</th></tr></thead><tbody>";
+
+    foreach ($result as $linha) {
       echo '<tr>';
-      foreach($row as $field) {
-          echo '<td>' . $field . '</td>';
+      foreach ($linha as $coluna => $value) {
+        echo "<td>" . $value . "</td>";
       }
       echo '</tr>';
     }
-    echo "</table>";
-
+    echo '</tbody><tfoot><tr><th>ID</th><th>Nome de Usuário</th><th>E-mail</th><th>Tipo</th><th>Senha provisória</th></tr></tfoot></table></div>';
   }
+
 ?>
+<script src="js/list_user.js"> </script>
