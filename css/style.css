@@ -163,3 +163,13 @@ td.prov {
     width: 20px!important;
     cursor: help;
 }
+#input-selecionar-arquivo{
+  min-width: 300px;
+  max-height: 27px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border:0;
+  border-bottom:1px solid #1abc9c;
+  background: none;
+  cursor: pointer;
+}

@@ -42,10 +42,10 @@
 				break;
 			case "aluno":
 				$result[] = '<li><a   href="#meuClaendário"><div class="button calendario">Meu calendario</div></a></li>';
-				$result[] = '<li><a   href="#arquivos"><div class="button arquivos">Arquivos</div></a></li>';
 
 				break;
 		}
+		$result[] = '<li><a   href="arquivos.php"><div class="button arquivos">Arquivos</div></a></li>';
 		$result[] = '<li><a   href="ajustes.php"><div class="button ajustes">Ajustes</div></a></li>';
 		$result[] = '</ul>';
 		return $result;
