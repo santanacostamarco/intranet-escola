@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 23/11/2017 às 13:15
+-- Tempo de geração: 25/11/2017 às 12:37
 -- Versão do servidor: 10.1.26-MariaDB
 -- Versão do PHP: 7.1.8
 
@@ -41,6 +41,19 @@ CREATE TABLE `arquivos` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `curso`
+--
+
+CREATE TABLE `curso` (
+  `cod` int(10) NOT NULL,
+  `nome` varchar(20) NOT NULL,
+  `turno` char(1) NOT NULL,
+  `ref` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `disciplinas`
 --
 
@@ -48,19 +61,12 @@ CREATE TABLE `disciplinas` (
   `codigo` int(6) NOT NULL,
   `ref` varchar(10) NOT NULL,
   `nome_disciplina` varchar(40) NOT NULL,
-  `curso` varchar(40) NOT NULL,
+  `curso` varchar(10) NOT NULL,
   `professor` varchar(40) NOT NULL,
   `turno` varchar(20) DEFAULT NULL,
   `data_p1` date DEFAULT NULL,
   `data_p2` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Fazendo dump de dados para tabela `disciplinas`
---
-
-INSERT INTO `disciplinas` (`codigo`, `ref`, `nome_disciplina`, `curso`, `professor`, `turno`, `data_p1`, `data_p2`) VALUES
-(1, 'GF_N1', 'Gestão financeira', 'gti', 'João Aguiar', 'noturno', '2017-09-11', '2017-11-23');
 
 -- --------------------------------------------------------
 
@@ -69,8 +75,8 @@ INSERT INTO `disciplinas` (`codigo`, `ref`, `nome_disciplina`, `curso`, `profess
 --
 
 CREATE TABLE `faltas` (
-  `ref` int(20) NOT NULL,
-  `ref_disciplina` text CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+  `cod` int(20) NOT NULL,
+  `ref_disciplina` varchar(10) NOT NULL,
   `matricula` int(20) NOT NULL,
   `faltas` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -83,7 +89,7 @@ CREATE TABLE `faltas` (
 
 CREATE TABLE `notas` (
   `codigo` int(6) NOT NULL,
-  `ref_disciplina` varchar(10) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+  `ref_disciplina` varchar(10) NOT NULL,
   `matricula` int(20) NOT NULL,
   `p1` double DEFAULT NULL,
   `p2` double DEFAULT NULL
@@ -131,25 +137,39 @@ INSERT INTO `users` (`user_id`, `username`, `user_password`, `user_first_name`, 
 -- Índices de tabela `arquivos`
 --
 ALTER TABLE `arquivos`
-  ADD PRIMARY KEY (`cod`);
+  ADD PRIMARY KEY (`cod`),
+  ADD KEY `proprietario` (`proprietario`);
+
+--
+-- Índices de tabela `curso`
+--
+ALTER TABLE `curso`
+  ADD PRIMARY KEY (`cod`),
+  ADD UNIQUE KEY `ref` (`ref`);
 
 --
 -- Índices de tabela `disciplinas`
 --
 ALTER TABLE `disciplinas`
-  ADD PRIMARY KEY (`codigo`);
+  ADD PRIMARY KEY (`codigo`),
+  ADD UNIQUE KEY `ref` (`ref`),
+  ADD KEY `curso` (`curso`);
 
 --
 -- Índices de tabela `faltas`
 --
 ALTER TABLE `faltas`
-  ADD PRIMARY KEY (`ref`);
+  ADD PRIMARY KEY (`cod`),
+  ADD KEY `matricula` (`matricula`),
+  ADD KEY `ref_disciplina` (`ref_disciplina`);
 
 --
 -- Índices de tabela `notas`
 --
 ALTER TABLE `notas`
-  ADD PRIMARY KEY (`codigo`);
+  ADD PRIMARY KEY (`codigo`),
+  ADD KEY `matricula` (`matricula`),
+  ADD KEY `ref_disciplina` (`ref_disciplina`);
 
 --
 -- Índices de tabela `users`
@@ -167,6 +187,11 @@ ALTER TABLE `users`
 ALTER TABLE `arquivos`
   MODIFY `cod` int(10) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT de tabela `curso`
+--
+ALTER TABLE `curso`
+  MODIFY `cod` int(10) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT de tabela `disciplinas`
 --
 ALTER TABLE `disciplinas`
@@ -175,7 +200,7 @@ ALTER TABLE `disciplinas`
 -- AUTO_INCREMENT de tabela `faltas`
 --
 ALTER TABLE `faltas`
-  MODIFY `ref` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `cod` int(20) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de tabela `notas`
 --
@@ -185,7 +210,38 @@ ALTER TABLE `notas`
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;COMMIT;
+  MODIFY `user_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+--
+-- Restrições para dumps de tabelas
+--
+
+--
+-- Restrições para tabelas `arquivos`
+--
+ALTER TABLE `arquivos`
+  ADD CONSTRAINT `arquivos_ibfk_1` FOREIGN KEY (`proprietario`) REFERENCES `users` (`user_id`);
+
+--
+-- Restrições para tabelas `disciplinas`
+--
+ALTER TABLE `disciplinas`
+  ADD CONSTRAINT `disciplinas_ibfk_1` FOREIGN KEY (`curso`) REFERENCES `curso` (`ref`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Restrições para tabelas `faltas`
+--
+ALTER TABLE `faltas`
+  ADD CONSTRAINT `faltas_ibfk_1` FOREIGN KEY (`matricula`) REFERENCES `users` (`user_id`),
+  ADD CONSTRAINT `faltas_ibfk_2` FOREIGN KEY (`ref_disciplina`) REFERENCES `disciplinas` (`ref`),
+  ADD CONSTRAINT `faltas_ibfk_3` FOREIGN KEY (`ref_disciplina`) REFERENCES `disciplinas` (`ref`);
+
+--
+-- Restrições para tabelas `notas`
+--
+ALTER TABLE `notas`
+  ADD CONSTRAINT `notas_ibfk_1` FOREIGN KEY (`matricula`) REFERENCES `users` (`user_id`),
+  ADD CONSTRAINT `notas_ibfk_2` FOREIGN KEY (`ref_disciplina`) REFERENCES `disciplinas` (`ref`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
