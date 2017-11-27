@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 25/11/2017 às 12:37
+-- Tempo de geração: 27/11/2017 às 13:37
 -- Versão do servidor: 10.1.26-MariaDB
 -- Versão do PHP: 7.1.8
 
@@ -34,11 +34,12 @@ CREATE TABLE `arquivos` (
   `extencao` varchar(5) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `proprietario` int(10) NOT NULL,
   `ref` varchar(40) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `visibilidade` tinyint(1) NOT NULL,
-  `url` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+  `visibilidade` varchar(10) NOT NULL,
+  `url` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `nome_original` varchar(40) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
+--------------------------------------------------------
 
 --
 -- Estrutura para tabela `curso`
@@ -120,14 +121,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `username`, `user_password`, `user_first_name`, `user_last_name`, `sex`, `email`, `user_tipo`, `user_birth_date`, `user_date_creation`, `senha_prov`) VALUES
-(1, 'admin', '6b52c479ec73a4fea208ae447ded9ca4', 'Administrador', NULL, NULL, 'admin@intranetescola.com.br', 'admin', '2017-10-01', '2017-10-01', 1),
-(4, 'Teste', 'f12042a40a7139e9c7b15efd07df2d80', 'Teste', 'teste', 'm', 'teste@teste.com', 'admin', '1222-12-20', '2017-11-20', 1),
-(5, 'ricardo', '9aff5cf0b6047fa3d0f7b6a9441b2083', 'Ricardo', 'Salles', 'm', 'ricardo@ricardo.com', 'professor', '1920-08-20', '2017-11-21', 1),
-(7, 'aluno', '21bc8db69e00e1a1ae330ac5113a8640', 'aluno', 'aluno', 'f', 'aluno@aluno.cm', 'aluno', '1111-11-11', '2017-11-21', 1),
-(8, 'professor', '37c8ac30a2857e479438fd9e66b7a771', 'professor', 'professor', 'o', 'professor@professor', 'professor', '1221-12-22', '2017-11-21', 1),
-(9, 'ad', '5d10c990fd3cd5b96219e20ed32b4749', 'ad', 'ad', 'o', 'ad@ad', 'admin', '1212-12-12', '2017-11-21', 1),
-(10, 'bla', 'e68c89bdf06531b73e416e39389be511', 'bla', 'bla', 'm', 'bla@bla', 'admin', '1111-11-11', '2017-11-21', 1),
-(12, 'teste2', '200e26f0c8cb8349cde5227f467a707c', 'teste', 'teste', 'm', 'teste@teste2', 'professor', '1212-12-12', '2017-11-21', 1);
+(1, 'admin', '6b52c479ec73a4fea208ae447ded9ca4', 'Administrador', NULL, NULL, 'admin@intranetescola.com.br', 'admin', '2017-10-01', '2017-10-01', 1);
 
 --
 -- Índices de tabelas apagadas
@@ -185,7 +179,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de tabela `arquivos`
 --
 ALTER TABLE `arquivos`
-  MODIFY `cod` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `cod` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de tabela `curso`
 --
@@ -195,7 +189,7 @@ ALTER TABLE `curso`
 -- AUTO_INCREMENT de tabela `disciplinas`
 --
 ALTER TABLE `disciplinas`
-  MODIFY `codigo` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `codigo` int(6) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de tabela `faltas`
 --
