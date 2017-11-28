@@ -11,8 +11,10 @@ $user_first_name = $_SESSION['user_first_name'];
 include('header.php'); ?>
 
 <div class="top">
-	<h1>Bem vindo <?php echo $user_first_name ?>!</h1>
-
+	<figure class="system-logo">
+		<img src="img/system-logo-dark.png">
+	</figure>
+	<h1 class="page-title">Bem vindo <?php echo $user_first_name ?>!</h1>
 </div>
 <div class="main-content">
 	<div class="nav-bar">

@@ -47,6 +47,8 @@
 		}
 		$result[] = '<li><a   href="arquivos.php"><div class="button arquivos">Arquivos</div></a></li>';
 		$result[] = '<li><a   href="ajustes.php"><div class="button ajustes">Ajustes</div></a></li>';
+		$result[] = '<li><a   href="sair.php"><div class="sair">Sair</div></a></li>';
+
 		$result[] = '</ul>';
 		return $result;
 	}

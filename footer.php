@@ -5,5 +5,6 @@
 
 </div>
 </div>
+<div class="footer-credits"> Desenvolvido por MS&W, diretos reservados</div>
 </body>
 </html>
