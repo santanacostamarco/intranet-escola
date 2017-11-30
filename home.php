@@ -25,7 +25,16 @@ include('header.php'); ?>
 		}
 	?>
 	</div>
-	<div class='section-replace' > <?php invertArray() ?></div>
+	<div class='section-replace' >
+		<?php
+		$avisos = getAvisos($user_id);
+		foreach ($avisos as $chave => $valor) {
+			echo '<div class="system-info warning"><p>';
+			echo $valor;
+			echo '</p></div>';
+		}
+		?>
+	</div>
 
 </div>
 

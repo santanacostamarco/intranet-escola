@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 27/11/2017 às 13:37
+-- Tempo de geração: 30/11/2017 às 19:23
 -- Versão do servidor: 10.1.26-MariaDB
 -- Versão do PHP: 7.1.8
 
@@ -36,10 +36,17 @@ CREATE TABLE `arquivos` (
   `ref` varchar(40) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `visibilidade` varchar(10) NOT NULL,
   `url` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `nome_original` varchar(40) DEFAULT NULL
+  `nome_original` varchar(255) DEFAULT NULL,
+  `tipo` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---------------------------------------------------------
+--
+-- Fazendo dump de dados para tabela `arquivos`
+--
+
+INSERT INTO `arquivos` (`cod`, `data_hora`, `extencao`, `proprietario`, `ref`, `visibilidade`, `url`, `nome_original`, `tipo`) VALUES
+
+-- --------------------------------------------------------
 
 --
 -- Estrutura para tabela `curso`
@@ -121,7 +128,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `username`, `user_password`, `user_first_name`, `user_last_name`, `sex`, `email`, `user_tipo`, `user_birth_date`, `user_date_creation`, `senha_prov`) VALUES
-(1, 'admin', '6b52c479ec73a4fea208ae447ded9ca4', 'Administrador', NULL, NULL, 'admin@intranetescola.com.br', 'admin', '2017-10-01', '2017-10-01', 1);
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Administrador', NULL, NULL, 'admin@intranetescola.com.br', 'admin', '2017-10-01', '2017-10-01', 1),
 
 --
 -- Índices de tabelas apagadas
@@ -179,7 +186,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de tabela `arquivos`
 --
 ALTER TABLE `arquivos`
-  MODIFY `cod` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `cod` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de tabela `curso`
 --
@@ -204,7 +211,7 @@ ALTER TABLE `notas`
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `user_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- Restrições para dumps de tabelas
 --

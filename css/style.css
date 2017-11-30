@@ -2,35 +2,6 @@ body {
     padding: 0px;
 }
 a{text-decoration: none!important;}
-/*
-.welcome-login{
-	width: 400px;
-	display: inline-block;
-	vertical-align: top;
-	text-align: center;
-	margin: 0px 100px 0px 0px;
-
-}
-
-input.form-control {
-	margin-bottom: 10px;
-}
-input.btn {
-	margin: 5px;
-}
-
-.main.login-front {
-	text-align: right;
-}
-.form-group-login {
-	width: 400px;
-	display: inline-block;
-  text-align: left;
-}
-.form-group-login form{
-  display: grid;
-}
-*/
 
 .page-title {
 	font-family: 'Lobster', cursive;
@@ -116,8 +87,14 @@ button.form-submit:hover {
 
 .system-info {
   vertical-align: middle;
-  border:2px dotted #2f464e;
-  margin:20px 0;
+  margin: 20px 0;
+  background: #f9f9f9;
+}
+.warning {
+  border-left: 2px solid #ff7f00;
+}
+.error {
+  border-left: 2px solid #ff000;
 }
 .system-info p {
     color: #2f464e;
@@ -197,4 +174,42 @@ td.prov {
   text-align: center;
   color: #f9f9f9;
   font-size: 15px;
+}
+form.alterar-senha input,
+form.alterar-senha label{
+  display: block;
+}
+.section-replace * {
+    vertical-align: top;
+    position: relative;
+}
+.nav-ajustes {
+    display: inline-block;
+    max-width: 300px;
+    background: #1abc9c;
+    height: -webkit-fill-available;
+    position: relative;
+    left: -32px;
+    top: -16px;
+    border-bottom-right-radius: 50px
+}
+.nav-ajustes li {
+  display: block;
+  padding:15px;
+}
+.nav-ajustes li a{
+  color:#fff;
+}
+.nav-ajustes li:hover a,
+.nav-ajustes li.current a{
+  color: #16a085;
+}
+.nav-ajustes li:hover,
+.nav-ajustes li.current{
+  background: #e9ecef;
+}
+
+
+.replace-ajustes {
+    display: inline-flex;
 }
