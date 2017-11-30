@@ -7,9 +7,14 @@ if (isset($_SESSION['user_id'])){
   $files_dir = "files/";
   if (is_dir($files_dir)){
     if (isset($_FILES['arquivo'])){
-      $file_name = $_FILES['arquivo']['name'];
-      $file_ext = explode(".", $file_name);
-      $file_ext = $file_ext[(count($file_ext)-1)];
+      $file_name = explode(".", $_FILES['arquivo']['name']);
+      $file_name[count($file_name)-1] = "";
+      $new_name = "";
+      foreach ($file_name as $key => $value) {
+        $new_name .= $value;
+      }
+      $file_type = $_FILES['arquivo']['type'];
+      $file_ext = get_file_ext($file_type);
       $file_proprietario = $user_id;
       $file_upload_date = date("Y-m-d H:i:s");
       $file_server_name = $file_proprietario."_".str_replace(":","",str_replace("-","",str_replace(" ","",str_replace("-","",$file_upload_date))));
@@ -30,7 +35,8 @@ if (isset($_SESSION['user_id'])){
             ref,
             visibilidade,
             url,
-            nome_original
+            nome_original,
+            tipo
           ) VALUES (
             '{$file_upload_date}',
             '{$file_ext}',
@@ -38,7 +44,8 @@ if (isset($_SESSION['user_id'])){
             '{$file_server_name}',
             '{$file_visibilidade}',
             '{$file_url}',
-            '{$file_name}'
+            '{$new_name}',
+            '{$file_type}'
           )";
           if (mysqli_query($connection, $query)){
             echo "Arquivo enviado com sucesso!";

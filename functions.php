@@ -47,7 +47,7 @@
 		}
 		$result[] = '<li><a   href="arquivos.php"><div class="button arquivos">Arquivos</div></a></li>';
 		$result[] = '<li><a   href="ajustes.php"><div class="button ajustes">Ajustes</div></a></li>';
-		$result[] = '<li><a   href="sair.php"><div class="sair">Sair</div></a></li>';
+		$result[] = '<li><a   href="sair.php"><div class="sair" style="color: white;"> Sair </div></a></li>';
 
 		$result[] = '</ul>';
 		return $result;
@@ -75,5 +75,19 @@
 		}
 		return 0;
 	}
+	function get_file_ext($mime_type){
+		$mime_types = array(
+			'application/vnd.openxmlformats-officedocument.wordprocessingml.document' => '.docx',
+			'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' => '.xlsx'
+
+		);
+		if (!array_key_exists($mime_type, $mime_types)){
+			return "outro";
+		}else{
+			return $mime_types[$mime_type];
+		}
+
+	}
+
 
 ?>

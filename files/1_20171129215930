@@ -1,0 +1,42 @@
+<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="42" width="42" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g stroke="null" id="svg_1">
+   <g stroke="null" id="svg_2">
+    <path fill="#2f464e" id="svg_3" d="m20,0.87512c-10.571203,0 -19.12488,8.554424 -19.12488,19.12488c0,10.571203 8.554424,19.12488 19.12488,19.12488c10.571203,0 19.12488,-8.554424 19.12488,-19.12488c0,-10.571203 -8.554499,-19.12488 -19.12488,-19.12488zm0,35.261497c-8.919441,0 -16.136617,-7.217774 -16.136617,-16.136617c0,-8.919441 7.217774,-16.136617 16.136617,-16.136617c8.919441,0 16.136617,7.217774 16.136617,16.136617c0,8.919441 -7.217849,16.136617 -16.136617,16.136617z"/>
+   </g>
+  </g>
+  <g stroke="null" id="svg_10"/>
+  <g stroke="null" id="svg_11"/>
+  <g stroke="null" id="svg_12"/>
+  <g stroke="null" id="svg_13"/>
+  <g stroke="null" id="svg_14"/>
+  <g stroke="null" id="svg_15"/>
+  <g stroke="null" id="svg_16"/>
+  <g stroke="null" id="svg_17"/>
+  <g stroke="null" id="svg_18"/>
+  <g stroke="null" id="svg_19"/>
+  <g stroke="null" id="svg_20"/>
+  <g stroke="null" id="svg_21"/>
+  <g stroke="null" id="svg_22"/>
+  <g stroke="null" id="svg_23"/>
+  <g stroke="null" id="svg_24"/>
+  <g stroke="null" id="svg_26">
+   <g stroke="null" id="svg_4">
+    <g stroke="null" id="svg_5">
+     <path stroke="null" fill="#ff7f00" id="svg_6" d="m19.999999,15.686234c-1.055333,0 -1.910796,0.855463 -1.910796,1.910796l0,12.304859c0,1.055333 0.855463,1.910796 1.910796,1.910796s1.910796,-0.855559 1.910796,-1.910892l0,-12.304763c0,-1.055333 -0.855463,-1.910796 -1.910796,-1.910796z"/>
+    </g>
+   </g>
+   <g stroke="null" id="svg_7">
+    <g stroke="null" id="svg_8">
+     <circle stroke="null" fill="#ff7f00" id="svg_9" r="2.579575" cy="10.766889" cx="19.999999"/>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

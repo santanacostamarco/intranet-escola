@@ -13,6 +13,9 @@
         <label for="check-if-public"> Este arquivo é público </label>
       </div>
     </form>
+    <?php
+      include('list_file.php');
+    ?>
 
     <script>
       $("input#selecionar-arquivo").change(function(){

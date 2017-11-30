@@ -166,9 +166,10 @@ select:focus{
     border: 0;
     border-top: 2px solid #16a085!important;
 }
-#list-user tbody tr:hover{
-  background-color: #e8e8e8!important;
-  cursor: pointer;
+#list-user tbody tr:hover,
+#list-file tbody tr:hover{
+  background-color: #f9f9f9!important;
+  cursor: default;
 }
 td.user-id {
 }
@@ -190,9 +191,10 @@ td.prov {
 
 .footer-credits{
   background: rgba(25,25,25,0.7);
-  position: absolute;
+  position: fixed;
   bottom:0;
   width: 100%;
   text-align: center;
   color: #f9f9f9;
+  font-size: 15px;
 }
