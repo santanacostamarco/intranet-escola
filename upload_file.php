@@ -48,13 +48,23 @@ if (isset($_SESSION['user_id'])){
             '{$file_type}'
           )";
           if (mysqli_query($connection, $query)){
-            echo "Arquivo enviado com sucesso!";
+            echo "<script >
+        		window.location='index.php';
+            alert('Arquivo enviado com sucesso!');
+        		</script>";
           } else {
-            echo " falha ao atualizar o banco ";
-            echo mysqli_connect_error();
+            echo "<script >
+        		window.location='index.php';
+            alert('Falha ao atualizar o banco!');
+            console.log(" . mysqli_connect_error() . ");
+        		</script>";
+
           }
         } else {
-          echo "Falha ao enviar o arquivo =[";
+          echo "<script >
+          window.location='index.php';
+          alert('Falha ao enviar o arquivo!');
+          </script>";
         }
       }
     }

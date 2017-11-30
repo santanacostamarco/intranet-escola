@@ -25,7 +25,7 @@ include('header.php'); ?>
 		}
 	?>
 	</div>
-	<div class='section-replace' ></div>
+	<div class='section-replace' > <?php invertArray() ?></div>
 
 </div>
 

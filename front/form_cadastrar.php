@@ -1,3 +1,4 @@
+
 <div class="user-tipo">
   <label for="user-tipo">Selecione o tipo do usuário</label>
   <select class="form-select" id="user-tipo">
