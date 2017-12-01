@@ -1,5 +1,5 @@
 <div class="form" id="cadastrar-professor">
-  <form action="cadastrar.php" method="post">
+  <form id="cadastrarUsuario" action="cadastrar.php" method="post">
 
     <div class="form-title">
       <h4> Dados Pessoais </h4>
@@ -47,8 +47,8 @@
         <td><input type="email" name="user-email" class="form-input" required /></td>
       </tr>
     </table>
-    <div class="system-info warning"> <p> A senha será gerada automáticamente e enviada
-      para o e-mail cadastrado, solicite que o usuário troque no primeiro acesso.</p>
+    <div class="system-info warning"> 
+      <p> A senha será gerada automáticamente. Solicite que o usuário troque no primeiro acesso.</p>
     </div>
 
     <div class="form-submit-control">
@@ -57,4 +57,4 @@
 
   </form>
 </div>
-<script src="js/ajax_cadastrar.js"> </script>
+<script src="js/ajax_cadastrar_usuario.js"> </script>

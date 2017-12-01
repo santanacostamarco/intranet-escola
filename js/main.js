@@ -8,3 +8,11 @@ function clearCurrentTab(parent){
 function addCurrentTab(current){
   current.classList.add("current");
 }
+
+$('.warning #trocarSenha').click(function(){
+  $('.button.ajustes').click();
+  setTimeout(function(){
+    $(".nav-ajustes #alterarSenha").click();
+  },300);
+
+});

@@ -48,6 +48,7 @@ input.form-input {
     border:0;
     border-bottom:1px solid #1abc9c;
     background: none;
+    color: #5a5a5a;
 
 }
 
@@ -176,7 +177,9 @@ td.prov {
   font-size: 15px;
 }
 form.alterar-senha input,
-form.alterar-senha label{
+form.alterar-senha label,
+form.atualizar-dados input,
+form.atualizar-dados label{
   display: block;
 }
 .section-replace * {
@@ -213,4 +216,20 @@ form.alterar-senha label{
 
 .replace-ajustes {
     display: inline-flex;
+}
+.system-info.warning::after {
+    content: "x";
+    background: #cacaca;
+    width: 15px!important;
+    height: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    position: relative;
+    float: right;
+    right: 20px;
+    top: 14px;
 }

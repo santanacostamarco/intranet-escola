@@ -9,7 +9,6 @@ for (var i = 0; i < botoesNavBar.length; i++){
       window.location.reload("/home.php");
     } else {
       $(".section-replace").load("front/"+link, function(){
-        console.log(lista);
         clearCurrentTab(lista);
         addCurrentTab(currentButton);
       });

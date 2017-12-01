@@ -6,6 +6,7 @@
 		$query = "SELECT senha_prov FROM users WHERE user_id = '{$user_id}'";
 		$result = mysqli_query($connection, $query);
 		if (mysqli_num_rows($result) > 0){
+			$array_avisos = array();
 			$result = mysqli_fetch_array($result)[0];
 			if ($result == "1"){
 				$array_avisos[] = "Ei! Não esqueca de trocar sua senha, <br/><a href='#' id='trocarSenha'> Clique aqui para fazer isso já! </a>";
@@ -48,12 +49,12 @@
 				$result[] = '<li><a   href="list_users.php"><div class="button usuarios">Usuários</div></a></li>';
 				break;
 			case "professor":
-				$result[] = '<li><a   href="#cadastrarAluno"><div class="button cadastrar-aluno">Cadastrar Aluno</div></a></li>';
-				$result[] = '<li><a   href="#meuClaendário"><div class="button calendario">Meu calendario</div></a></li>';
+				$result[] = '<li><a   href="form_cadastrar_aluno.php"><div class="button cadastrar-aluno">Cadastrar Aluno</div></a></li>';
+				$result[] = '<li><a   href="calendario.php"><div class="button calendario">Meu calendario</div></a></li>';
 				$result[] = '<li><a   href="list_alunos.php"><div class="button meus-alunos">Meus Alunos</div></a></li>';
 				break;
 			case "aluno":
-				$result[] = '<li><a   href="#meuClaendário"><div class="button calendario">Meu calendario</div></a></li>';
+				$result[] = '<li><a   href="calendario.php"><div class="button calendario">Meu calendario</div></a></li>';
 
 				break;
 		}
@@ -77,13 +78,13 @@
 
 	function existeUsuario($user, $email){
 		if (mysqli_num_rows(mysqli_query(connection_checker(), "SELECT user_id FROM users WHERE username = '{$user}' AND email = '{$email}'")) > 0){
-			return 3;
+			return 3; // ambos
 		}
 		if (mysqli_num_rows(mysqli_query(connection_checker(), "SELECT user_id FROM users WHERE email = '{$email}'")) > 0){
-			return 2;
+			return 2; // email
 		}
 		if (mysqli_num_rows(mysqli_query(connection_checker(), "SELECT user_id FROM users WHERE username = '{$user}'")) > 0){
-			return 1;
+			return 1; //username
 		}
 		return 0;
 	}
