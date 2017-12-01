@@ -4,11 +4,13 @@ for (var i = 0; i < botoesNavBar.length; i++){
     event.preventDefault();
     var link = this.parentNode.getAttribute("href");
     var currentButton = this;
+    var lista = currentButton.parentNode.parentNode.parentNode;
     if (link == "home.php"){
       window.location.reload("/home.php");
     } else {
       $(".section-replace").load("front/"+link, function(){
-        clearCurrentTab();
+        console.log(lista);
+        clearCurrentTab(lista);
         addCurrentTab(currentButton);
       });
     }

@@ -3,7 +3,7 @@ $('.nav-ajustes li a').click(function(event){
   var link = this.getAttribute('href');
   var currentButton = this.parentNode;
   $('.replace-ajustes').load('front/'+link, function(){
-    clearCurrentTab();
+    clearCurrentTab(currentButton.parentNode.parentNode);
     addCurrentTab(currentButton);
   });
 });

@@ -195,7 +195,6 @@ form.alterar-senha label{
 }
 .nav-ajustes li {
   display: block;
-  padding:15px;
 }
 .nav-ajustes li a{
   color:#fff;
@@ -208,7 +207,9 @@ form.alterar-senha label{
 .nav-ajustes li.current{
   background: #e9ecef;
 }
-
+.li-ajustes{
+  padding:15px;
+}
 
 .replace-ajustes {
     display: inline-flex;
