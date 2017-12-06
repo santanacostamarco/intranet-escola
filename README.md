@@ -1,3 +1,63 @@
+**TUTORIAL DE USO DO SISTEMA**
+
+*1º passo: faça o download do projeto*
+-a. via GIT 
+Se estiver utilizando o S.O. das Janelas baixe o GIT no link a seguir:
+Clique para Baixar
+-1. No S.O. do Pinguim:
+    # apt-get install git
+(para distribuições derivadas de Debian)
+    # yum install git
+(para distribuições derivadas de RedHat)
+-2. Na Maçã:
+    # port install git-core +svn +doc +bash_completion +gitweb
+(via MacPorts)
+ou http://sourceforge.net/projects/git-osx-installer/
+
+Crie uma pasta para receber o projeto, esta pasta pode ficar diretamente no servidor, por exemplo: se for usar o Xampp como servidor: crie a pasta em /opt/lampp/htdocs/nome-da-pasta (no Linux) ou c:\xampp\htdocs\nome-da-pasta (no Windows)
+-3. Para baixar via SSL
+    $ git clone git@bitbucket.org:adsgavs/intranet-escola.git
+-4. Para baixar via HTTP
+$ git clone https://santannacostamarco@bitbucket.org/adsgavs/intranet-escola.git
+
+-b. ou baixe o projeto diretamente pelo link:
+https://bitbucket.org/adsgavs/intranet-escola/get/1ad765346607.zip
+
+-2º passo: adicione ao seu servidor PHP:
+Recomendamos o software XAMPP para criar o ambiente do servidor de hospedagem com suporte PHP e MySQL ;)
+
+Se estiver usando o Xampp deposite o diretório do projeto na pasta “htdocs” do XAMPP.
+
+-3º passo: Set-up do Banco de dados
+
+Com o Apache e MySQL funcionando, acesse “localhost/phpmyadmin”;
+
+Crie um banco de dados chamado “intranet-escola”;
+
+Em seguida use o importador do phpmyadmin clicando em “Importar”, ali haverá um campo para selecionar o arquivo;
+
+Navegue até o diretório do projeto e selecione o arquivo “database.sql”; 
+
+Clique em executar!
+
+
+
+ATENÇÃO!
+	É importante que o login do banco de dados seja o padrão de instalação do xampp (usuário “root” e senha “”), e que o nome do banco seja “intranet-escola”.
+	Caso você deseja criar ou já possua um login e senha para o mysql altere o seguinte trecho no arquivo “functions.php”:
+
+     05		$connection = mysqli_connect('localhost', '[seu_usuario]', '[sua_senha]', '[nome_do_banco]');
+
+Após estes passos o projeto estará funcionando perfeitamente!
+Acesse o projeto em “localhost/intranet-escola” e faça login no sistema com o usuário “admin” e senha “@admin@”
+
+
+(o # significa que o comando deve ser executado com autenticação de super user (SUDO)
+o $ indica que o comando pode ser executado sem autenticação de super user).
+
+
+
+
 **Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
 
 When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
